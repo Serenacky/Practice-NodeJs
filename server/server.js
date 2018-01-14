@@ -18,14 +18,15 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
   console.log('New user connected');
 
-  socket.emit('newMessage', generateMessage{'Serena','Welcome to the chatroom'});
+  socket.emit('newMessage', generateMessage('Admin','Welcome to the chatroom'));
 
-  socket.broadcast.emit('newMessage',generateMessage{'Serena','New user joined'});
+  socket.broadcast.emit('newMessage',generateMessage('Other Users','New user joined'));
 
   //backend is listening to event 'createMessage'
-  socket.on('createMessage',(message)=> {
+  socket.on('createMessage',(message, callback)=> {
     console.log('createMessage',message);
     io.emit('newMessage', generateMessage(message.from,message.text));
+    callback('Here is from the server');
   });
 
 
@@ -37,23 +38,9 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });
+
 // hbs.registerPartials(path.join(__dirname, '../views/partials'));
 // app.set('view engine', 'hbs');
-//
-// hbs.registerHelper('getCurrentYear', () => {
-//   return new Date().getFullYear()
-// });
-//
-// hbs.registerHelper('screamIt', (text) => {
-//   return text.toUpperCase();
-// });
-//
-// app.get('/', (req, res) => {
-//   res.render('home.hbs', {
-//     pageTitle: 'Home Page',
-//     welcomeMessage: 'Welcome to my website'
-//   });
-// });
 //
 // app.get('/about', (req, res) => {
 //   res.render('about.hbs', {
