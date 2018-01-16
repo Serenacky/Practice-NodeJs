@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset = "utf-8">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <style>
+       .box {
+         background-color: orange;
+         border:1px solid black;
+       }
+    </style> -->
+  </head>
+  <body class="chat">
+
+    <div class="chat__sidebar">
+      <h2>Member</h2>
+      <div id="users"></div>
+    </div>
+
+    <div class="chat__main">
+      <ol id="messages" class="chat__messages"></ol>
+
+      <div class="chat__footer">
+        <form id="message-form">
+        <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+        <!-- send button -->
+        <button type="submit" class="btn btn-info">
+           <span class="glyphicon glyphicon-send"></span>
+            Send
+        </button>
+        </form>
+     </div>
+    </div>
+
+
+    <script id="message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+        </div>
+        <div class="message__body">
+          <p>{{text}}</p>
+        </div>
+        <div class="message__footer">
+          <span>{{time}}</span>
+        </div>
+      </li>
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src = "/js/libs/jquery-3.2.1.min.js"></script>
+    <script src = "/js/libs/moment.js"></script>
+    <script src = "/js/libs/mustache.js"></script>
+    <script src = "/js/chat.js"></script>
+
+  </body>
+
+</html>
