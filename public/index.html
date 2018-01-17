@@ -5,22 +5,25 @@
     <meta charset = "utf-8">
     <title>FSE-Chat-Room</title>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
 
+        .nav-color{
+          background:snow;
+        }
         .navbar-brand{
-          font-size: 2em;
+          font-size: 1.8em;
           font-family:"Gill Sans", sans-serif
         }
         #topContainer {
             background-image:url("background.jpg");
-            height:750px;
             background-size:cover;
+            height:900px;
             width:100%;
         }
         #topRow{
-            margin-top:100px;
+            margin-top:150px;
             text-align:center;
         }
         #topRow h1{
@@ -43,21 +46,19 @@
         .marginTop{
           margin-top:30px;
         }
-
-
     </style>
 
   </head>
   <body>
     <!-- navigation bar -->
-    <div class="navbar navbar-default">
+    <div class="navbar navbar-default navbar-fixed-top nav-color">
       <div class="container">
 
         <div class="navbar-header">
           <a class="navbar-brand">FSE Chat Room</a>
         </div>
 
-        <div>
+        <div class="collapse navbar-collapse">
 
           <form class="navbar-form navbar-right">
             <div class="form-group">

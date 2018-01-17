@@ -29,15 +29,15 @@ io.on('connection', (socket) => {
   socket.on('createMessage',(message, callback)=> {
     console.log('createMessage',message);
     io.emit('newMessage', generateMessage(message.from,message.text));
-    callback('');
+    callback();
   });
 
 
-  socket.on('disconnect',() => {
+  socket.on('disconnect',function() {
     console.log('Disconnected from the client');
   });
 });
 
-server.listen(port, () => {
+server.listen(port, function() {
   console.log(`Server is up on port ${port}`);
 });

@@ -7,16 +7,6 @@ socket.on('disconnect',function() {
   console.log('Disconnected from the server');
 });
 
-function scrollToBottom() {
-  //Selectors
-  var message = jQuery('#messages');
-  var clientHeight = messages.props('clientHeight');
-  var scrollTop = messages.prop('scrollTop');
-  var scrollHeight = messages.prop('scrollHeight');
-
-  
-  //Heights
-}
 
 //frontend is listening to event 'newMessage'
 // to print message on the screen.

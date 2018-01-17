@@ -4,50 +4,146 @@
     <!-- Required meta tags -->
     <meta charset = "utf-8">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <!-- <style>
-       .box {
-         background-color: orange;
-         border:1px solid black;
-       }
-    </style> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+    .nav-color{
+      background:lavenderblush;
+    }
+      .navbar-brand{
+        font-size: 1.8em;
+        font-family:"Gill Sans", sans-serif
+     }
+      #chatContainer {
+         background-image:url("chat.jpg");
+         background-size:cover;
+         width:1000px;
+         height: 880px;
+     }
+     #chatTopRow{
+         margin-top:100px;
+         text-align:center;
+     }
+     #chatTopRow h1{
+         font-size:3em;
+         font-family: "Gill Sans", sans-serif;
+     }
+     #messageContainer{
+       width:1000px;
+       height: 700px;
+     }
+
+     #chat__messages{
+       font-size:2em;
+       font-family:"Gill Sans", sans-serif
+     }
+
+     .chat__footer {
+       background: mistyrose;
+       display:flex;
+       padding: 10px;
+       /*height: 60px;*/
+       flex-shrink: 0;
+     }
+
+     .chat__footer form {
+       flex-grow: 1;
+       display: flex;
+     }
+
+     .chat__footer form * {
+       margin-right: 10px;
+     }
+
+     .chat__footer input {
+       margin-left: 10px;
+       border: none;
+       padding: 10px;
+       width:max-content;
+       flex-grow: 1;
+     }
+     .chat__footer {
+       flex-direction: column;
+     }
+
+     .chat__footer form {
+       margin-bottom: 5px;
+     }
+
+     .chat__footer button {
+       margin-right: 10px;
+     }
+
+     .color-card{
+       /* background: lavenderblush; */
+       background: snow;
+     }
+    </style>
+
   </head>
-  <body class="chat">
 
-    <div class="chat__sidebar">
-      <h2>Member</h2>
-      <div id="users"></div>
+  <body class=chat>
+
+    <!-- navigation bar -->
+    <div class="navbar navbar-default navbar-fixed-top nav-color">
+      <div class="container">
+
+        <div class="navbar-header">
+          <a class="navbar-brand">FSE Chat Room</a>
+        </div>
+
+      </div>
     </div>
 
-    <div class="chat__main">
-      <ol id="messages" class="chat__messages"></ol>
+    <!-- background-picture -->
+    <div class="container" id="chatContainer">
 
-      <div class="chat__footer">
-        <form id="message-form">
-        <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
-        <!-- send button -->
-        <button type="submit" class="btn btn-info">
-           <span class="glyphicon glyphicon-send"></span>
-            Send
-        </button>
-        </form>
-     </div>
+        <div class="row">
+          <div class ="col-md-8" id="chatTopRow">
+            <div class="chat__main">
+
+              <!-- <div class="card color-card">
+                <div class="card-body">
+                  This is some text within a card body.
+                </div>
+              </div> -->
+
+              <div class="container" id="messageContainer">
+                <ol id="messages" class="chat__messages col-md-4"></ol>
+              </div>
+
+              <div class="chat__footer">
+                <form id="message-form">
+                <input name="message" type="text" placeholder="Message"
+                autofocus autocomplete="off"/>
+                <!-- send button -->
+                <button type="submit" class="btn btn-info">
+                   <span class="glyphicon glyphicon-send"></span>
+                    Send
+                </button>
+                </form>
+             </div>
+
+            </div>
+
+            <script id="message-template" type="text/template">
+
+              <div class="alert alert-secondary color-card" role="alert">
+                <p class="message-head">{{from}}</p>
+                <h5 class="message-body">{{text}}</h5>
+                <p class="message-time">{{time}}</p>
+              </div>
+
+            </script>
+
+              <script>
+                $("#chatContainer").css("height",$(window).height());
+              </script>
+          </div>
+        </div>
+
     </div>
-
-
-    <script id="message-template" type="text/template">
-      <li class="message">
-        <div class="message__title">
-          <h4>{{from}}</h4>
-        </div>
-        <div class="message__body">
-          <p>{{text}}</p>
-        </div>
-        <div class="message__footer">
-          <span>{{time}}</span>
-        </div>
-      </li>
-    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src = "/js/libs/jquery-3.2.1.min.js"></script>
