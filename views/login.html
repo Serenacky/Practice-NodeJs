@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Required meta tags -->
+  <meta charset = "utf-8">
+  <title>FSE-Chat-Room</title>
+  <!-- bootstrap -->
+  <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/login.css">
+</head>
+<body>
+<!-- navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top nav-color">
+  <div class="navbar-header">
+    <a class="navbar-brand">FSE Chat Room</a>
+  </div>
+</div>
+
+<!-- background-picture -->
+<div class="container" id="topContainer">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" id="topRow">
+      <h1>Welcome to FSE Chat Room</h1>
+      <p class="serif marginTop">Chat with your friends?</p>
+      <form id="form" role="form" onsubmit="return false;">
+        <!-- username -->
+        <div class="form-group marginTop">
+          <label class="cursive" for="username">Username</label>
+          <input id="username" class="form-control" type="text" placeholder="Enter username"
+                 autofocus autocomplete="off"/>
+        </div>
+        <!-- password -->
+        <div class="form-group">
+          <label class="cursive" for="password">Password</label>
+          <input id="password" class="form-control" type="password" placeholder="Enter Password"/>
+        </div>
+        <!-- submit -->
+        <div class="form-group">
+          <div class="form-group">
+            <button type="submit" id ="login" class="btn btn-success">Login</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" id ="register" class="btn btn-info">Register</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script src="../public/js/jquery-1.11.2.min.js"></script>
+  <script src="../public/js/bootstrap.min.js"></script>
+</div>
+
+<script>
+    $('#register').on({
+        click: function () {
+            location.href = 'register';
+        }
+    });
+
+    $('#login').on({
+        click: function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                if (username == '') {
+                    alert('Please input your Username!');
+                    return false;
+                }
+                var reg = /^.{4,12}$/;
+                if (!reg.test(password)) {
+                    alert('Password should be 4 to 12 characters');
+                    return false;
+                }
+                $.post('/login/signIn', {username: username, password: password}, function (res) {
+                    if (res.success == 1) {
+                        location.href = 'home';
+                    } else {
+                        alert(res.err);
+                    }
+                }, 'json');
+        }
+    })
+</script>
+</body>
+
+</html>

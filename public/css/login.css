@@ -1,0 +1,61 @@
+.nav-color{
+    background:snow;
+}
+.navbar-brand{
+    font-size: 1.8em;
+    font-family:"Gill Sans", sans-serif
+}
+#topContainer {
+    background-image:url("../img/background.jpg");
+    background-size:cover;
+    height:900px;
+    width:100%;
+}
+#topRow{
+    margin-top:300px;
+    text-align:center;
+}
+#topRow h1{
+    font-size:3em;
+    font-family: "Gill Sans", sans-serif;
+}
+.serif {
+    font-family:"Gill Sans", sans-serif;
+    font-size:2em;
+
+}
+#username{
+    width:500px;
+    height:40px;
+    margin: auto;
+    border-radius:5px;
+    font-size: 1.1em;
+}
+#password{
+    width:500px;
+    height:40px;
+    margin: auto;
+    border-radius:5px;
+    font-size: 1.1em;
+}
+#login{
+    width:300px;
+    height:40px;
+    margin: auto;
+    border-radius:5px;
+    font-size: 1.1em;
+}
+#register{
+    width:300px;
+    height:40px;
+    margin: auto;
+    border-radius:5px;
+    font-size: 1.1em;
+}
+.lead{
+    font-size:2em;
+    font-weight:lead;
+}
+.marginTop{
+    margin-top:30px;
+}

@@ -1,24 +1,24 @@
 {
-  "name": "web-server",
+  "name": "chat.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "test": "mocha server/**/*.test.js",
-    "test-watch": "nodemon --exec 'npm test'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "9.4.0"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cookies": "^0.7.0",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.2",
+    "socket.io": "^2.0.1",
+    "swig": "^1.4.2",
     "bootstrap": "^4.0.0-beta.3",
-    "express": "^4.14.0",
-    "hbs": "^4.0.0",
-    "moment": "^2.15.1",
-    "socket.io": "^1.4.8"
+    "moment": "^2.15.1"
   },
   "devDependencies": {
     "expect": "^1.20.2",

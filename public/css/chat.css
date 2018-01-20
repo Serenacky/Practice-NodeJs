@@ -1,0 +1,98 @@
+.blush {
+    background:lavenderblush;
+}
+
+.nav-color{
+    background:lavenderblush;
+}
+.navbar-brand{
+    font-size: 1.8em;
+    font-family:"Gill Sans", sans-serif
+}
+#chatContainer {
+    background-image:url("../img/chat.jpg");
+    background-size:cover;
+    height:900px;
+    width:100%;
+}
+#chatTopRow{
+    margin-top:100px;
+    text-align:center;
+}
+#chatTopRow h1{
+    font-size:3em;
+    font-family: "Gill Sans", sans-serif;
+}
+#messageContainer{
+    width:1000px;
+    height: 700px;
+    overflow-x: none;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-base-color:snow;
+    SCROLLBAR-HIGHLIGHT-COLOR:snow;
+    SCROLLBAR-ARROW-COLOR:snow;
+
+}
+
+#chat__messages{
+    font-size:2em;
+    font-family:"Gill Sans", sans-serif
+}
+
+.chat__footer {
+    background: mistyrose;
+    display:flex;
+    padding: 10px;
+    /*height: 60px;*/
+    flex-shrink: 0;
+}
+
+.chat__footer form {
+    flex-grow: 1;
+    display: flex;
+}
+
+.chat__footer form * {
+    margin-right: 10px;
+}
+
+.chat__footer input {
+    width: 1000px;
+    max-width: 1000px;
+    height: 50px;
+    max-height: 50px;
+}
+.chat__footer {
+    flex-direction: column;
+}
+
+.chat__footer form {
+    margin-bottom: 5px;
+}
+
+.chat__footer button {
+    margin-right: 10px;
+}
+
+.color-card{
+    background: lavenderblush;
+ }
+
+.color-enter{
+    /* background: lavenderblush; */
+    background: mistyrose;
+    width: 300px;
+}
+.color-leave{
+    /* background: lavenderblush; */
+    background: papayawhip;
+    width: 300px;
+}
+.color-welcome {
+    background: lightblue;
+    width: 300px;
+}
+
+
+

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <<title>FSE-Chat-Room</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/chat.css">
+</head>
+
+<body>
+<!-- navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top nav-color">
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                FSE Chat Room for <span id="username" name = "hahaha">{{username}}</span>
+            </a>
+        </div>
+
+         <div class="collapse navbar-collapse">
+             <form class="navbar-form">
+                 <button type="submit" class="btn btn-danger navbar-right"
+                 style="margin-top:10px;" id="exitBtn">Log out</button>
+             </form>
+
+        </div>
+</div>
+
+<div class="container" id="chatContainer">
+    <div class="container-fluid" style="margin-top: 80px">
+
+
+        <div class="col-sm-4 col-md-2 sidebar">
+            <div class="panel blush">
+                <div class="panel-heading" style="font-size: 1.2em">Online members</div>
+                <div class="panel-body"> <ul id="memberList"></ul></div>
+            </div>
+        </div>
+
+
+
+            <div class="col-sm-9  col-md-9">
+                <div class="col-sm-11">
+                    <div class="panel panel-info">
+
+                        <div class="panel-heading" style="height:60px">
+                            <p style="height:60px;font-size:1.2em" >Friends</p>
+                        </div>
+
+                        <div class="panel-body container" style="height:450px" id="messageContainer">
+                            <ol id="messages" class="chat__messages"></ol>
+                        </div>
+
+                        <div class="panel-footer panel-info" style="height:110px" >
+                            <form>
+                                <div class="infoInput text-right">
+                                    <textarea id="msgInput" style="height:92px" name="message" class="form-control" placeholder="Message"></textarea>
+                                    <br>
+                                    <button id="sendBtn" class="btn btn-info">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src = "../public/js/libs/moment.js"></script>
+<script src="../public/js/jquery-1.11.2.min.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/home.js"></script>
+</body>
+</html>
+
+
