@@ -73,9 +73,6 @@ io.on('connection', function(socket){
         callback();
     });
 
-    socket.on('needTime',()=>{
-        socket.emit('haveTime');
-    });
 
     socket.on('disconnect', function (data) {//退出
         var username = data.username || socket.username;
@@ -102,4 +99,3 @@ io.on('connection', function(socket){
         })
     });
 });
-
